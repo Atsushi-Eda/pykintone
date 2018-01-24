@@ -20,7 +20,7 @@ class Account(object):
 
         def encode(user_id, password):
             import base64
-            return base64.b64encode("{0}:{1}".format(user_id, password).encode(kintoneService.ENCODE))
+            return base64.b64encode("{0}:{1}".format(user_id, password).encode(kintoneService.ENCODE)).decode(kintoneService.ENCODE)
 
         if self.basic_id:
             auth = encode(self.basic_id, self.basic_password)
